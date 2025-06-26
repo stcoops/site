@@ -17,6 +17,7 @@
   }
 
 
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
@@ -43,7 +44,7 @@ body {
 
 .timeline-event {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   padding-left: 40px;
 
   opacity: 0;

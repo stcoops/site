@@ -4021,6 +4021,7 @@ input, select, textarea {
 
 		#footer .inner > * {
 			width: 100%;
+			color: rgba(255, 255, 255, 0.35);
 		}
 
 		#footer .inner form {
