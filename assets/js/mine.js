@@ -12,6 +12,24 @@ document.getElementById("wip-banner-mobile")
 
 
 
+
+  const events = document.querySelectorAll('.timeline-event');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  events.forEach(event => {
+    observer.observe(event);
+  });
+
+
 // Handle initial page load
         window.addEventListener('load', () => {
             const hash = window.location.hash.substr(1);
