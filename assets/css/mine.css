@@ -16,7 +16,10 @@
 
   }
 
-
+#purpose p{
+  font-size: 0.7em;
+  color: #333;
+}
 
 body {
   font-family: Arial, sans-serif;
