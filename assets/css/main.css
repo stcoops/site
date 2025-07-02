@@ -3310,14 +3310,16 @@ input, select, textarea {
 
 		#menu .links {
 			list-style: none;
-			margin-bottom: 1.5em;
+			margin-bottom: 0.5em;
 			padding: 0;
 
 		}
 
 			#menu .links li {
 				padding: 0;
-				padding-bottom: 5px;
+				padding-bottom: 0.5em;
+				align-content: center;
+				vertical-align: middle;
 			}
 
 				#menu .links li a {
@@ -3329,7 +3331,7 @@ input, select, textarea {
 					font-weight: 200;
 					letter-spacing: 0.1em;
 					line-height: 1.85em;
-					padding: 0.75em;
+					padding: 1em;
 					text-transform: uppercase;
 				}
 
