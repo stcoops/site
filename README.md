@@ -1,2 +1,10 @@
+# [My Website](https://stcoops.github.io/site/)
+Hosted on GitHub Pages, entirely free and composed of some *interesting* workarounds for pages limitations...
 
-https://stcoops.github.io/site/
+Current To-Do List:
+- [ ] Finish Timeline.
+- [ ] 404 Page
+- [ ] Contact Details
+- [ ] Easter Eggs
+
+
