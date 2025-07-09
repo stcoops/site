@@ -6,5 +6,6 @@ Current To-Do List:
 - [ ] 404 Page
 - [ ] Contact Details
 - [ ] Easter Eggs
+- [ ] Complete Migration to [New Domain](https://stcoops.com)
 
 

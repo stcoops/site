@@ -1,67 +1,43 @@
-document.getElementById("wip-banner")
-        .addEventListener("click", function() {
+var banner = document.getElementById("wip-banner")
+if (banner) {
+        banner.addEventListener("click", function() {
+        document.getElementById("wip-banner").id = "wip-banner-fade-out";
+        });
+};
 
-  document.getElementById("wip-banner").id = "wip-banner-fade-out";
-});
 
-document.getElementById("wip-banner-mobile")
-        .addEventListener("click", function() {
+
+var banner = document.getElementById("wip-banner-mobile")
+if (banner) {
+        banner.addEventListener("click", function() {
 
   document.getElementById("wip-banner-mobile").id = "wip-banner-fade-out-mobile";
-});
-
+  });
+};
 
 
 
 const events = document.querySelectorAll('.timeline-event');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    } else {
-      entry.target.classList.remove('visible');
-    }
+if (events) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.6
   });
-}, {
-  threshold: 0.9
-});
-
-events.forEach(event => {
-  observer.observe(event);
-});
 
 
-
-// Handle initial page load
-        window.addEventListener('load', () => {
-            const hash = window.location.hash.substr(1);
-            showPage(hash || 'welcome');
-        });
-
-        // Handle navigation clicks
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const pageId = e.target.getAttribute('href').substr(1);
-                showPage(pageId);
-                history.pushState(null, null, `#${pageId}`);
-            });
-        });
-
-        // Handle browser back/forward
-        window.addEventListener('popstate', () => {
-            const hash = window.location.hash.substr(1);
-            showPage(hash || 'welcome');
-        });
-
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById(pageId).classList.add('active');
-        }
-
+  document.addEventListener('DOMContentLoaded', function () {
+    events.forEach(event => {
+      observer.observe(event);
+    });
+  });
+};
 /*
 document.getElementById("submit").addEventListener("click", function() {
   fields.name = document.getElementById('name');
