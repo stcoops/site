@@ -21,6 +21,12 @@
   color: #333;
 }
 
+#logo {
+  width: 55px;
+  height: 60px;
+  padding-top: 10px;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #323232;
