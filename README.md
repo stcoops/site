@@ -1,11 +1,11 @@
-# [My Website](https://stcoops.github.io/site/)
-Hosted on GitHub Pages, entirely free and composed of some *interesting* workarounds for pages limitations...
+# [My Website](https://stcoops.com/)
+Still a work in progress, based off a template that I do plan to remove on overhaul.
 
-Current To-Do List:
-- [ ] Finish Timeline.
-- [ ] 404 Page
-- [ ] Contact Details
-- [ ] Easter Eggs
-- [ ] Complete Migration to [New Domain](https://stcoops.com)
+Current 'To-Do' list:
+- [x] Finish timeline.
+- [ ] Create project pages
+- [ ] Contact page
+- [ ] Interactivity
+- [x] Complete migration to [New Domain](https://stcoops.com)
 
 
