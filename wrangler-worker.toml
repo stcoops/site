@@ -1,0 +1,28 @@
+name = "contact-form-worker"
+main = "worker.js"
+compatibility_date = "2025-07-13"
+
+# KV namespace for rate limiting (optional)
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "your-kv-namespace-id"
+# preview_id = "your-preview-kv-namespace-id"
+
+# Environment variables
+[vars]
+CONTACT_EMAIL = "contact@stcoops.co.uk"
+FROM_EMAIL = "noreply@stcoops.com"
+
+# Routes - this connects the worker to your domain
+[[routes]]
+pattern = "stcoops.com/api/contact"
+zone_name = "stcoops.com"
+
+[[routes]]
+pattern = "*.stcoops.com/api/contact"
+zone_name = "stcoops.com"
+
+# For custom domains, you can also use:
+# [[routes]]
+# pattern = "yourdomain.com/api/*"
+# zone_name = "yourdomain.com"

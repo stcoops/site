@@ -1,0 +1,45 @@
+name = "website"
+compatibility_date = "2025-07-13"
+
+[env.production]
+name = "website"
+
+# Cloudflare Pages configuration
+pages_build_output_dir = "."
+
+# Static site configuration
+[[redirects]]
+from = "/contact"
+to = "/contact.html"
+status = 200
+
+[[redirects]]
+from = "/about-me"
+to = "/about-me.html"
+status = 200
+
+[[redirects]]
+from = "/formal-cv"
+to = "/formal-cv.html"
+status = 200
+
+# Handle 404s
+[[redirects]]
+from = "/*"
+to = "/404.html"
+status = 404
+
+# Headers for security
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+# PHP files handling (if supported)
+[[headers]]
+for = "*.php"
+[headers.values]
+Content-Type = "application/x-httpd-php"

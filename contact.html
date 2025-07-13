@@ -62,25 +62,35 @@
 					<section id="footer">
 						<div class="inner">
 							<p>Got a question? Just message me. I respond to as many messages on all platforms as I can, but the best way to reach me is by email. Found a bug? shhhhh don't tell too many people, just create an issue on github or contact me if it's website breaking or a security risk.</p>
-							<!--<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
+							
+							<!-- Contact Form -->
+							<div id="contact-form-container">
+								<form id="contact-form" method="post" action="/api/contact">
+									<div class="fields">
+										<div class="field">
+											<label for="name">Name *</label>
+											<input type="text" name="name" id="name" required maxlength="100" />
+										</div>
+										<div class="field">
+											<label for="email">Email *</label>
+											<input type="email" name="email" id="email" required maxlength="100" />
+										</div>
+										<div class="field">
+											<label for="message">Message *</label>
+											<textarea name="message" id="message" rows="6" required minlength="10" maxlength="2000" placeholder="Please write your message here..."></textarea>
+										</div>
 									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form> -->
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" id="submit-btn" /></li>
+									</ul>
+									<!-- Honeypot field for bot detection -->
+									<input type="text" name="honeypot" style="display: none;" />
+								</form>
+								
+								<!-- Response message area -->
+								<div id="form-response" style="display: none; margin-top: 20px; padding: 15px; border-radius: 5px;"></div>
+							</div>
+							
 							<ul class="contact">
 								<!-- <li class="icon solid fa-envelope"><a target="_blank" href="mailto:">address</a></li> -->
 								<li class="icon brands fa-github"><a target="_blank" name="GitHub" href="https://github.com/stcoops">GitHub</a></li>

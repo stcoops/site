@@ -1,19 +1,49 @@
-on: [push]
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Deploy to Cloudflare Pages
     permissions:
       contents: read
       deployments: write
     steps:
-      - uses: actions/checkout@v4
-      - name: Deploy
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Wrangler
+        run: npm install -g wrangler
+        
+      - name: Verify files structure
+        run: |
+          echo "Current directory contents:"
+          ls -la
+          echo "Checking for required files:"
+          ls -la index.html || echo "index.html not found"
+          ls -la wrangler.toml || echo "wrangler.toml not found"
+          
+      - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=website
-          # Optional: Enable this if you want to have GitHub Deployments triggered
-          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy . --project-name=website --compatibility-date=2024-01-01
+          
+      - name: Deployment Status
+        if: success()
+        run: echo "✅ Deployment successful!"
+        
+      - name: Deployment Failed
+        if: failure()
+        run: echo "❌ Deployment failed! Check logs above."
